@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>rqt_question_box</name>
+    <version>0.0.1</version>
+    <description>The rqt_question_box package</description>
+
+    <maintainer email="rbelshaw@sagarobotics.com">Rob Belshaw</maintainer>
+
+
+    <!-- One license tag required, multiple allowed, one license per tag -->
+    <!-- Commonly used license strings: -->
+    <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+    <license>TODO</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>roscpp</build_depend>
+    <build_depend>message_generation</build_depend>    
+    
+    <exec_depend>message_runtime</exec_depend>
+    <exec_depend>roscpp</exec_depend>
+
+</package>
