@@ -7,8 +7,8 @@ struct Request
 {
     std::string question = "";
     std::string response = "";
+    std::string type; //bool, string, int   
     bool result = false; // true when completed
-    int type; //0 bool, 1 string, 2 int   
     int id;
 };
 

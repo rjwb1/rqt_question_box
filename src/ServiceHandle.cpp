@@ -23,6 +23,7 @@ bool ServiceHandle::serviceCallback(rqt_question_box::GetGuiRequest& req, rqt_qu
     gui_request.question = req.question;
     int req_id = ServiceHandle::getId();
     gui_request.id = req_id;
+    gui_request.type = req.type;;
     gui_request_vec = guiReq_.getObject();
     gui_request_vec.push_back(gui_request);
     guiReq_.setObject(gui_request_vec);

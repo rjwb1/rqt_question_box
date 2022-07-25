@@ -27,15 +27,38 @@ void App::update()
     {
       if (! request_vec[0].result)
         {
-            Window window;
-            window.setMsg(request_vec[0].question);
-            window.move( x, y );
-            window.show();
-            app.exec();
-            request_vec = guiReq_.getObject();
-            request_vec[0].response = window.getResult();
-            request_vec[0].result = true; 
-            guiReq_.setObject(request_vec);
+            if(request_vec[0].type == "bool")
+            {
+                BoolBox window;
+                window.setMsg(request_vec[0].question);
+                //window.move( x, y );
+                window.show();
+                app.exec();
+                request_vec = guiReq_.getObject();
+                request_vec[0].response = window.getResult();
+                request_vec[0].result = true; 
+                guiReq_.setObject(request_vec);
+            }
+            else if (request_vec[0].type == "string")
+            {
+                StringBox window;
+                window.setMsg(request_vec[0].question);
+                //window.move( x, y );
+                window.show();
+                app.exec();
+                request_vec = guiReq_.getObject();
+                request_vec[0].response = window.getResult();
+                request_vec[0].result = true; 
+                guiReq_.setObject(request_vec);
+            }
+            else
+            {
+                request_vec = guiReq_.getObject();
+                request_vec[0].result = true; 
+                guiReq_.setObject(request_vec);
+            }
+
+
         }
     }
 }

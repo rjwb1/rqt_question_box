@@ -41,6 +41,8 @@ add_executable(
     ${PROJECT_NAME}
         src/main.cpp
         src/message_box/MessageBox.cpp
+        src/message_box/StringBox.cpp
+        src/message_box/BoolBox.cpp
         src/ServiceHandle.cpp
         src/App.cpp)
 
