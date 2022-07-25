@@ -20,7 +20,7 @@ add_service_files(
   GetGui.srv
 )
 
-generate_messages(DEPENDENCIES std_msgs)
+generate_messages(DEPENDENCIES std_msgs rqt_question_box)
 
 include_directories(
     include
@@ -30,6 +30,7 @@ catkin_package(
     CATKIN_DEPENDS
     roscpp
     message_runtime
+    message_generation
     INCLUDE_DIRS include
     LIBRARIES ${PROJECT_NAME}
 )
@@ -47,6 +48,11 @@ add_executable(
         src/App.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${QT_LIBRARIES})
+
+add_dependencies(
+    ${PROJECT_NAME}
+    ${${PROJECT_NAME}_EXPORTED_TARGETS}
+    ${catkin_EXPORTED_TARGETS})
 
 install(DIRECTORY include/${PROJECT_NAME}/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
