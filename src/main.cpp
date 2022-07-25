@@ -13,7 +13,7 @@ int main(int argc, char **argv)
   ros::Rate r(5); // 10 hz
 
   App app(argc, argv);
-  ServiceHandle service_handle(&nh, "gui");
+  ServiceHandle service_handle(&nh, "rqt_question_box");
 
   std::cout << "Spinning..." << std::endl;
   while (ros::ok())
