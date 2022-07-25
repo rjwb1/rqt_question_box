@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="rqt_question_box" type="rqt_question_box" name="rqt_question_box" respawn="false" output="screen"/>
+</launch>

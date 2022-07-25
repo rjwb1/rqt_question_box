@@ -3,24 +3,20 @@
 #include <QApplication>
 #include <QFont>
 #include <QString>
-#include <rqt_question_box/Window.h>
+#include <rqt_question_box/message_box/MessageBox.h>
 #include <ros/ros.h>
+#include <QDesktopWidget>
 
 Window::Window(QWidget *parent) :
         QWidget(parent)
 {
-
-    shd_mem_    = memory::SharedMemory::getInstance();
-    guiOut = shd_mem_->getSharedObject<bool>("_GUI_OUT_");
-    guiRes = shd_mem_->getSharedObject<bool>("_GUI_RES_");
-
     // Set size of the window
     setFixedSize(600, 400);
 
     m_label = new QLabel("", this);
-    m_label->setGeometry(10, 50 , 400, 100);
+    m_label->setGeometry(10, 50 , 580, 100);
     QFont font = m_label->font();
-    font.setPointSize(12);
+    font.setPointSize(20);
     font.setBold(true);
     m_label->setFont(font);
 
@@ -45,13 +41,18 @@ void Window::setMsg(std::string message_)
 void Window::handleYesButton()
 {
     // std::cout << "Yes!" << std::endl;
-    guiRes.setObject(true);
+    result_ = "true";
     QApplication::quit();
 }
 
 void Window::handleNoButton()
 {
     // std::cout << "No!" << std::endl;
-    guiRes.setObject(false);
+    result_ = "false";
     QApplication::quit();
+}
+
+std::string Window::getResult()
+{
+    return result_;
 }

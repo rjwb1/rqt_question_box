@@ -40,7 +40,9 @@ set(QT_LIBRARIES Qt5::Widgets)
 add_executable(
     ${PROJECT_NAME}
         src/main.cpp
-        src/Window.cpp)
+        src/message_box/MessageBox.cpp
+        src/ServiceHandle.cpp
+        src/App.cpp)
 
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${QT_LIBRARIES})
 

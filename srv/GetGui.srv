@@ -1,3 +1,4 @@
 string question
+string type # bool (yes or no), int, string
 ---
-bool result 
+string response
