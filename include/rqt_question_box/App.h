@@ -24,7 +24,7 @@ private:
     std::vector<Request> request_vec;  
     QApplication app;
     QDesktopWidget *desktop;
-    int x, y;
+    int screenWidth, screenHeight;
 };
 
 #endif // APP_H
