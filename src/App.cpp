@@ -1,6 +1,6 @@
 #include <rqt_question_box/App.h>
 
-App::App(int argc, char **argv) :
+App::App(int &argc, char *argv[]) :
     app(argc, argv)
 {
     shd_mem_    = memory::SharedMemory::getInstance();
