@@ -3,6 +3,7 @@
 
 #include <QPushButton>
 #include <QWidget>
+#include <QGridLayout>
 #include <rqt_question_box/message_box/MessageBox.h>
 
 class QPushButton;

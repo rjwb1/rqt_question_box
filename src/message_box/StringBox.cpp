@@ -4,10 +4,13 @@ StringBox::StringBox()
 {
     // Create and position the button
     m_button = new QPushButton("Ok", this);
-    m_button->setGeometry(350, 250, 200, 100);
-
     m_textbox = new QLineEdit(this);
-    m_textbox->setGeometry(10, 250, 380, 100);
+
+    QGridLayout *layout = new QGridLayout;
+    layout->addWidget(m_label, 0, 0, 1, 5);
+    layout->addWidget(m_textbox, 2, 0, 1, 3);
+    layout->addWidget(m_button, 2, 3, 1, 2);
+    setLayout(layout);
 
     // NEW : Do the connection
     connect(m_button, &QPushButton::released, this, &StringBox::handleOkButton);

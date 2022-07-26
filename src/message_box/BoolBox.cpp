@@ -4,10 +4,13 @@ BoolBox::BoolBox()
 {
     // Create and position the button
     m_yes_button = new QPushButton("Yes", this);
-    m_yes_button->setGeometry(50, 250, 200, 100);
-
     m_no_button = new QPushButton("No", this);
-    m_no_button->setGeometry(350, 250, 200, 100);
+
+    QGridLayout *layout = new QGridLayout;
+    layout->addWidget(m_label, 0, 0, 1, 5);
+    layout->addWidget(m_yes_button, 2, 0, 1, 2);
+    layout->addWidget(m_no_button, 2, 3, 1, 2);
+    setLayout(layout);
 
     // NEW : Do the connection
     connect(m_no_button, &QPushButton::released, this, &BoolBox::handleNoButton);
