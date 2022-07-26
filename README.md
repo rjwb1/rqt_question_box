@@ -3,6 +3,13 @@ Simple rosservice triggered question box for user intervention and queries
 
 ## Basic Usage 
 
+Run with 
+```
+roslaunch rqt_question_box rqt_question_box.launch height:=400 width:=600 
+```
+(Size args are optional)
+
+
 Get "yes or no" dialog box with question "Foo Bar?"
 
 ```
