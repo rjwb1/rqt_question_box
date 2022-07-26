@@ -6,6 +6,7 @@
 #include <rqt_question_box/message_box/MessageBox.h>
 #include <rqt_question_box/message_box/BoolBox.h>
 #include <rqt_question_box/message_box/StringBox.h>
+#include <rqt_question_box/message_box/IntBox.h>
 #include <QApplication>
 #include <QProgressBar>
 #include <QSlider>

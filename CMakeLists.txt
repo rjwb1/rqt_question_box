@@ -44,6 +44,7 @@ add_executable(
         src/message_box/MessageBox.cpp
         src/message_box/StringBox.cpp
         src/message_box/BoolBox.cpp
+        src/message_box/IntBox.cpp
         src/ServiceHandle.cpp
         src/App.cpp)
 
